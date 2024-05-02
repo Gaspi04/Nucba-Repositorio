@@ -7,10 +7,22 @@
     height: auto;
 }
 
+h1{
+    color: blue;
+    background-color: coral;
+}
 
+input:checked + label{
+    color: aqua;
+}
 
+*{
+    background-color: beige;
+  }
 
-
+#puto{
+    background-color: brown;
+}
 
 
 
