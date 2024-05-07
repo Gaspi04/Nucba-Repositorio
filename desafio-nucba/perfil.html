@@ -15,10 +15,10 @@
     </picture>
     <h2>Informacion personal</h2>
     <ul>
-        <li>Nombre: Agustin</p>
-        <li>Apellido: Gaspar Gastañaga</p>
-        <li>Edad: 20 años</p>
-        <li>Email: agustingastanaga1802@gmail.com</p>
+        <li class="otra">Nombre: Agustin</p>
+        <li class="otra">Apellido: Gaspar Gastañaga</p>
+        <li class="otra">Edad: 20 años</p>
+        <li class="otra">Email: agustingastanaga1802@gmail.com</p>
     </ul>
     <h2>Sobre mi</h2>
     <p class="text">Tengo 20 años, trabajo de cortinero con mi familia, estudio ingenieria en informatica en la uba y en mi tiempo libre voy al gimnasio o jugando algo en la compu</p>
@@ -26,16 +26,16 @@
 <form action="procesar datos.php" method="post">
     <fieldset>
         <legend><b>Comunicate conmigo</b></legend>
-        <label for="nombre">Nombre:</label>
+        <label for="nombre" class="otra">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre">
 
-        <label for="Apellido">Apellido:</label>
+        <label for="Apellido" class="otra">Apellido:</label>
         <input type="text" id="Apellido" name="Apellido" required placeholder="Ingrese su apellido">
 
-        <label for="email">Email:</label>
+        <label for="email" class="otra">Email:</label>
         <input type="email" id="email" name="email" required placeholder="Ingrese su email">
-        <br><br>
-        <button type="submit">Enviar</button>
+        
+        <button type="submit" class="otra">Enviar</button>
     </fieldset>
     <fieldset>
         <legend>Deja un mensaje</legend>
