@@ -9,34 +9,40 @@
 <body>
 <div class="contenido">
     <h1>Contacto</h1>
-    <figure>
-        <img src="yo.png" 
+    <picture>
+        <img src="yo.jpeg" 
         alt="foto de Agustin Gaspar" id="imagen">
-    </figure>
+    </picture>
+    <h2>Informacion personal</h2>
     <ul>
-        <li id="puto">Nombre: Agustin</p>
+        <li>Nombre: Agustin</p>
         <li>Apellido: Gaspar Gastañaga</p>
         <li>Edad: 20 años</p>
-        <li>email: agustingastanaga1802@gmail.com</p>
-        <li>Tengo 20 años, trabajo de cortinero con mi familia, estudio ingenieria en informatica en la uba y en mi tiempo libre voy al gimnasio o jugando algo en la compu</p>
+        <li>Email: agustingastanaga1802@gmail.com</p>
     </ul>
+    <h2>Sobre mi</h2>
+    <p class="text">Tengo 20 años, trabajo de cortinero con mi familia, estudio ingenieria en informatica en la uba y en mi tiempo libre voy al gimnasio o jugando algo en la compu</p>
 </div>
 <form action="procesar datos.php" method="post">
     <fieldset>
-        <legend><b>Contacto</b></legend>
+        <legend><b>Comunicate conmigo</b></legend>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre">
 
         <label for="Apellido">Apellido:</label>
-        <input type="text" id="Apellido" name="Apellido" required>
+        <input type="text" id="Apellido" name="Apellido" required placeholder="Ingrese su apellido">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-  
+        <input type="email" id="email" name="email" required placeholder="Ingrese su email">
+        <br><br>
         <button type="submit">Enviar</button>
     </fieldset>
+    <fieldset>
+        <legend>Deja un mensaje</legend>
+        <textarea name="mensaje" id="mensaje" placeholder="Ingrese su mensaje"></textarea>
+    </fieldset>
     <input type="checkbox" id="checkbox">
-    <label for="checkbox">checking</label>
+    <label for="checkbox">Te gusto la pagina</label>
   </form>
 <!--required sirve para que los input,textarea y los select, basicamente te obliga a que rellenes ese espacio sino no se puede mandar el formulario-->
 <!--La etiqueta <label> en HTML se utiliza para asociar un texto descriptivo a un elemento de formulario, como un campo de entrada (<input>), un área de texto (<textarea>), o un control de selección (<select>). La principal función de la etiqueta <label> es mejorar la accesibilidad y la usabilidad de los formularios web al proporcionar una descripción visible del propósito del campo de formulario y permitir que los usuarios interactúen con el campo de manera más intuitiva.-->
