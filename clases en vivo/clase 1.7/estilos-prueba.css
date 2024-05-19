@@ -1,0 +1,53 @@
+.caja-flex{
+    background: beige;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.caja-flex:nth-child(2){
+    background-color: red;    
+}
+
+.caja-flex p{
+    margin: 0;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.wrap{
+    display: flex;
+    flex-wrap: wrap ;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.stretch{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
