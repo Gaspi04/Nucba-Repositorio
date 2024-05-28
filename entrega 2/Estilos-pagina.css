@@ -10,16 +10,18 @@
     height: 4rem;
 }
 .logo{
-    height: 5.7rem;
-    width: 10rem;
+    height: 3rem;
+    width: 12rem;
 }
 #search{
     max-width: 1rem;
     max-height: 0.75;
+    background-color: white;
+    padding: 10%;
 }
 
 #main-header{
-    background-color:   rgb(104, 101, 101);
+    background-color:rgb(104, 101, 101);
     display: flex;
     align-items: center;
     height: 6rem;
@@ -29,6 +31,8 @@
     left: 0;
     width: 100%;
     gap: 1rem;
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #main-header picture{
@@ -43,7 +47,7 @@
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-    padding-right: 2rem;
+    padding-right: 1rem;
 }
 
 #main-header nav a{
@@ -70,7 +74,9 @@
     gap: 1rem;
 }
 
-
+.buscador{
+    border: solid rgb(159, 243, 243);
+}
 
 
 
