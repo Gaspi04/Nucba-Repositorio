@@ -1,90 +1,116 @@
-:root{
-    background-color: #02050e;
+
+:root {
+  background-color: #02050e;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
-#carrito{
-    width: 2rem;
-    height: 2rem;
+#carrito {
+  width: 2rem;
+  height: 2rem;
 }
-.logo{
-    height: 3rem;
-    width: 12rem;
+.logo {
+  height: 3rem;
+  width: 12rem;
 }
-#search{
-    max-width: 1.5rem;
-    height: 1.5rem;
-    background-color:transparent;
-    padding: 10%;
-}
-
-#main-header{
-    background-color:rgb(104, 101, 101);
-    display: flex;
-    align-items: center;
-    height: 4rem;
-    padding: 1rem 0.5rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    gap: 0.5rem;
-    font-size: 1.3rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+#search {
+  max-width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  padding: 10%;
 }
 
-#main-header picture{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#main-header {
+  background-color: rgb(104, 101, 101);
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  padding: 1rem 0.5rem;
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 
+#main-header picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #main-header nav {
-    flex: 1 ;
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    padding-right: 1rem;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-right: 1rem;
 }
 
-#main-header nav a{
-    color: rgb(71, 71, 216);
-    text-decoration: none;
-    border-radius: 1rem;
-    background-color: aliceblue;
-    padding: 0.3rem;
+#main-header nav a {
+  color: rgb(71, 71, 216);
+  text-decoration: none;
+  border-radius: 1rem;
+  background-color: aliceblue;
+  padding: 0.3rem;
 }
 
-#main-header form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#main-header form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#main-header form button{
-    background-color: transparent;
+#main-header form button {
+  background-color: transparent;
 }
 
-#main-header form button{
-    margin-left: 0.5rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 1rem;
+#main-header form button {
+  margin-left: 0.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
 }
 
-.buscador{
-    border: solid rgb(159, 243, 243);
-    height: 1.5rem;
+.buscador {
+  border: solid rgb(159, 243, 243);
+  height: 1.5rem;
 }
 
+main{
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+main h1{
+  font-size: 3rem;
+}
+
+section{
+  color: white;
+}
+
+section ul li img{
+  max-width: 25rem;
+  max-height: 25rem;
+  display: flex;
+  
+}
+
+li{
+  display: flex;
+  gap: 1rem;
+}
 
 
 
