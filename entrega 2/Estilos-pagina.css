@@ -25,12 +25,12 @@
 }
 
 #main-header {
-  background-color: rgb(104, 101, 101);
+  background-color: rgba(104, 101, 101, 0.445);
   display: flex;
   align-items: center;
   height: 4rem;
   padding: 1rem 0.5rem;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -54,11 +54,17 @@
 }
 
 #main-header nav a {
-  color: rgb(71, 71, 216);
+  color: white;
+  display: flex;
   text-decoration: none;
-  border-radius: 1rem;
-  background-color: aliceblue;
-  padding: 0.3rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  transition: color 0.3ms;
+}
+
+#main-header nav a:hover {
+  color: rgb(0, 89, 255);
 }
 
 #main-header form {
@@ -103,20 +109,19 @@ section {
   transform: translate(0, 4rem);
 }
 
-section ul li img {
+img{
   max-width: 15rem;
   max-height: 15rem;
   display: flex;
-  transition-property: all;
-  transition-duration: 1s;
+
 }
 
-section ul li img:hover {
-  transition-property: all;
-  transition-duration: 1s;
-  width: 750px;
-  height: 150px;
+.imagenes {
+  max-width: 15rem;
+  max-height: 15rem;
+  display: flex;
 }
+
 
 li {
   display: flex;
@@ -164,24 +169,30 @@ ul li p {
   gap: 0.5rem;
 }
 
-.botones{
+.botones {
   display: flex;
   background-color: rgb(0, 0, 100);
   color: white;
   border-radius: 2rem;
   text-decoration: none;
   padding: 4px;
+  margin-top: 1rem;
+  transition: background-color 0.3ms;
+}
+
+.botones:hover {
+  background-color: rgb(0, 204, 255);
 }
 
 @keyframes apariciones {
   0% {
     opacity: 0;
-    transform: translateY(500px);
+    transform: translateY(300px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(20px);
   }
 }
 
@@ -200,17 +211,85 @@ ul li p {
   animation-duration: 3s;
 }
 
-#centrar{
+#centrar {
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translate(0, 100px);
   flex-direction: column;
+  gap: 1rem;
 }
 
-section a{
+.opciones {
   text-decoration: none;
   color: white;
+  width: 150px;
+  height: 50px;
+  background: rgb(58, 121, 255);
+  display: flex;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3ms;
+}
+
+.opciones:hover {
+  background-color: blue;
+}
+
+header button img {
+  cursor: pointer;
+}
+
+section h2 {
+  transform: translate(0, 10px);
+}
+
+#centrarx2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translate(0 , 130px);
+  gap: 2rem;
+}
+
+#acomodar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0 3rem;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+#acomodar li{
+  width: calc(100% / 4 - 1rem);
+  background-color: rgb(68, 68, 68);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#acomodar li picture {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#acomodar li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 

@@ -9,7 +9,7 @@
   <body>
     <header id="main-header">
       <picture><img src="./assets/logo.png" alt="Logo de Nucba" /></picture>
-      <nav>
+      <nav id="main-nav">
         <a class="active" href="#">Home</a>
         <a href="#">Descubre</a>
         <a href="#">BTC</a>
@@ -17,13 +17,35 @@
         <a href="#">Contactanos</a>
       </nav>
       <form action="">
-        <button type="button">
+        <!--
+        <label for="btn-menu">menu</label>
+        <input type="checkbox" id="btn-menu">
+        <nav id="mobile-nav">
+            <a class="active" href="#">Home</a>
+            <a href="#">Descubre</a>
+            <a href="#">BTC</a>
+            <a href="#">Youtube</a>
+            <a href="#">Contactanos</a>
+        </nav>
+        -->
+        
+        <button type="button" id="btn-menu" popovertarget="mobile-nav" popovertargetaction="toggle">
           <img src="./assets/menu.png" alt="Icono del Menu" />
         </button>
-        <button type="button">
+        <button type="button" id="btn-cart">
           <img src="./assets/cart-icon.svg" alt="Icono del Carrito" />
         </button>
       </form>
+
+      <nav id="mobile-nav" popover="manual" >
+        <a class="active" href="#">Home</a>
+        <a href="#">Descubre</a>
+        <a href="#">BTC</a>
+        <a href="#">Youtube</a>
+        <a href="#">Contactanos</a>
+      </nav>
+
+
     </header>
 
     <main>
@@ -59,7 +81,7 @@
       </section>
     </main>
 
-    <section>
+    <section id="info">
       <h2>Crea, Aprende Y Comparte Los NFTs</h2>
       <ul>
         <li>
@@ -90,7 +112,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="discover">
       <header><h2>Descubre una nueva era de colecciones</h2></header>
       <article>
         <p>
@@ -122,9 +144,9 @@
       </ul>
     </section>
 
-    <section>
+    <section id="products">
       <header>
-        <h2>HOT NFTs</h2>
+        <h2>Hot NFTs</h2>
         <ul>
           <li>🎨Todas</li>
           <li>⚽Futbol</li>
@@ -134,16 +156,18 @@
           <li>️💼Políticos</li>
         </ul>
       </header>
-      <ul>
+      <ul id="list">
         <li>
-          <picture><img src="./assets/products/daovinci.png" alt="" /></picture>
-          <p>Golden Messi</p>
+          <picture>
+            <img src="./assets/products/daovinci.png" alt="" />
+          </picture>
+          <h3>Golden Messi</h3>
           <p>Current Bid</p>
           <figure>
             <img src="./assets/user.png" alt="Avatar del creador" />
             <figcaption>@thetroncous</figcaption>
           </figure>
-          <p>6.89 ETH</p>
+          <p class="price">6.89 ETH</p>
           <figure>
             <img src="./assets/fire.png" alt="Icono de Fuego" />
             <figcaption>05:12:07</figcaption>
@@ -151,14 +175,16 @@
           <a href="#">Add</a>
         </li>
         <li>
-          <picture><img src="./assets/products/fangster.png" alt="" /></picture>
-          <p>Diego Maradona</p>
+          <picture>
+            <img src="./assets/products/fangster.png" alt="" />
+          </picture>
+          <h3>Diego Maradona</h3>
           <p>Current Bid</p>
           <figure>
             <img src="./assets/user.png" alt="Avatar del creador" />
             <figcaption>@kirik8</figcaption>
           </figure>
-          <p>5.89 ETH</p>
+          <p class="price">5.89 ETH</p>
           <figure>
             <img src="./assets/fire.png" alt="Icono de Fuego" />
             <figcaption>05:12:07</figcaption>
@@ -166,14 +192,16 @@
           <a href="#">Add</a>
         </li>
         <li>
-          <picture><img src="./assets/products/sherbet.png" alt="" /></picture>
-          <p>L10nel Messi</p>
+          <picture>
+            <img src="./assets/products/sherbet.png" alt="" />
+          </picture>
+          <h3>L10nel Messi</h3>
           <p>Current Bid</p>
           <figure>
             <img src="./assets/user.png" alt="Avatar del creador" />
             <figcaption>@FD10S</figcaption>
           </figure>
-          <p>6.89 ETH</p>
+          <p class="price">6.89 ETH</p>
           <figure>
             <img src="./assets/fire.png" alt="Icono de Fuego" />
             <figcaption>05:12:07</figcaption>
@@ -181,16 +209,16 @@
           <a href="#">Add</a>
         </li>
         <li>
-          <picture
-            ><img src="./assets/products/cutemonkey.png" alt=""
-          /></picture>
-          <p>M. Schumacher</p>
+          <picture>
+            <img src="./assets/products/cutemonkey.png" alt="" />
+          </picture>
+          <h3>M. Schumacher</h3>
           <p>Current Bid</p>
           <figure>
             <img src="./assets/user.png" alt="Avatar del creador" />
             <figcaption>@Urastream</figcaption>
           </figure>
-          <p>3.67 ETH</p>
+          <p class="price">3.67 ETH</p>
           <figure>
             <img src="./assets/fire.png" alt="Icono de Fuego" />
             <figcaption>05:12:07</figcaption>
@@ -198,16 +226,16 @@
           <a href="#">Add</a>
         </li>
         <li>
-          <picture
-            ><img src="./assets/products/cuteshiba.png" alt=""
-          /></picture>
-          <p>Fernando Alonso</p>
+          <picture>
+            <img src="./assets/products/cuteshiba.png" alt="" />
+          </picture>
+          <h3>Fernando Alonso</h3>
           <p>Current Bid</p>
           <figure>
             <img src="./assets/user.png" alt="Avatar del creador" />
             <figcaption>@Gulineta</figcaption>
           </figure>
-          <p>4.52 ETH</p>
+          <p class="price">4.52 ETH</p>
           <figure>
             <img src="./assets/fire.png" alt="Icono de Fuego" />
             <figcaption>05:12:07</figcaption>
@@ -216,13 +244,13 @@
         </li>
         <li>
           <picture><img src="./assets/products/toretto.png" alt="" /></picture>
-          <p>Toretto</p>
+          <h3>Toretto</h3>
           <p>Current Bid</p>
           <figure>
             <img src="./assets/user.png" alt="Avatar del creador" />
             <figcaption>@HardBena</figcaption>
           </figure>
-          <p>7.33 ETH</p>
+          <p class="price">7.33 ETH</p>
           <figure>
             <img src="./assets/fire.png" alt="Icono de Fuego" />
             <figcaption>05:12:07</figcaption>
@@ -230,9 +258,9 @@
           <a href="#">Add</a>
         </li>
       </ul>
-      <nav>
-        <a href="#">Ver Más</a>
-      </nav>
+      <form>
+        <button type="button">Ver Más</a>
+        </form>
     </section>
 
     <footer>
