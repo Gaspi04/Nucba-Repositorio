@@ -30,7 +30,8 @@
     to bottom,
     rgba(104, 101, 101, 0.445),
     rgba(59, 58, 58, 0.445),
-    #02050e);
+    #02050e
+  );
   display: flex;
   align-items: center;
   height: 4rem;
@@ -105,7 +106,7 @@ main {
 
 main h1 {
   font-size: 3rem;
-  background-image: linear-gradient( 
+  background-image: linear-gradient(
     rgb(29, 108, 255),
     rgb(0, 78, 223),
     rgb(175, 0, 175)
@@ -309,16 +310,17 @@ section h2 {
   color: white;
   border-radius: 2rem;
   background-color: rgb(68, 68, 68);
-  padding: 0.5rem ;
+  padding: 0.5rem;
   margin-top: 1rem;
   transition: background-color 0.3ms;
+  transform: translateY(-50px);
 }
 
-#vermas:hover{
-  background-color: rgb(58, 121, 255);;
+#vermas:hover {
+  background-color: rgb(58, 121, 255);
 }
 
-.info{
+.info {
   display: flex;
   align-items: center;
   text-align: center;
@@ -328,8 +330,8 @@ section h2 {
   transform: translate(250px, 90px);
 }
 
-section article p{
-  background-color: rgb(68, 68, 68) ;
+section article p {
+  background-color: rgb(68, 68, 68);
   border-radius: 1rem;
   padding: 1rem;
   font-size: 1.3rem;
