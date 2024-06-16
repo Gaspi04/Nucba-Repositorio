@@ -52,7 +52,7 @@
   align-items: center;
 }
 
-#main-header nav {
+#main-nav {
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -60,7 +60,7 @@
   padding-right: 1rem;
 }
 
-#main-header nav a {
+#main-nav a {
   color: white;
   display: flex;
   text-decoration: none;
@@ -70,7 +70,7 @@
   transition: color 0.3ms;
 }
 
-#main-header nav a:hover {
+#main-nav a:hover {
   color: rgb(0, 89, 255);
 }
 
@@ -84,7 +84,7 @@
   background-color: transparent;
 }
 
-#main-header form button {
+#btn-menu {
   margin-left: 0.5rem;
   display: flex;
   justify-content: center;
@@ -92,12 +92,35 @@
   gap: 1rem;
 }
 
+#btn-menu {
+  display: none;
+}
+
 .buscador {
   border: solid rgb(159, 243, 243);
   height: 1.5rem;
 }
 
-main {
+@media(max-width: 1200px){
+  #btn-menu{
+    display: flex;
+  }
+  #main-nav{
+    display: none;
+  }
+  .buscador{
+    height: 1.2rem;
+    width: 7rem;
+  }
+  #main-header{
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+}
+
+
+
+#main {
   color: white;
   display: flex;
   justify-content: center;
@@ -114,6 +137,11 @@ main h1 {
   );
   background-clip: text;
   color: transparent;
+}
+
+#tete{
+  display: flex;
+  flex-direction: row;
 }
 
 section {
@@ -223,6 +251,27 @@ ul li p {
   animation-duration: 3s;
 }
 
+@media(max-width: 1200px){
+  #tete{
+    display: flex;
+    flex-direction: column;
+    transform: translate(4.2rem, 0);
+  }
+  .hay{
+  width: 20rem;
+  flex-direction: column;
+  padding: 0.5rem;
+  height: 18rem; 
+  }
+  
+  #gg{
+    transform: translate(4.2rem, 4rem);
+  }
+  #gg h1{
+    font-size: 2rem;
+  }
+}
+
 #centrar {
   display: flex;
   justify-content: center;
@@ -234,6 +283,7 @@ ul li p {
 
 .opciones {
   text-decoration: none;
+  flex-wrap: wrap;
   color: white;
   width: 150px;
   height: 50px;
@@ -251,6 +301,16 @@ ul li p {
   background-color: blue;
 }
 
+@media(max-width: 1200px){
+  .opciones{
+    width: 100px;
+    height: 50px;
+  }
+  #centrar{
+    transform: translate(4.2rem, 100px);
+  }
+}
+
 header button img {
   cursor: pointer;
 }
@@ -259,6 +319,7 @@ section h2 {
   transform: translate(0, 10px);
 }
 
+/* juegos */
 #centrarx2 {
   display: flex;
   justify-content: center;
@@ -314,13 +375,26 @@ section h2 {
   padding: 0.5rem;
   margin-top: 1rem;
   transition: background-color 0.3ms;
-  /* transform: translateY(-50px); */
+  transform: translateY(-50px);
 }
 
 #vermas:hover {
   background-color: rgb(58, 121, 255);
 }
 
+@media(max-width:1200px){
+  #acomodar{
+    max-width: 100%;
+  }
+  #acomodar li{
+    width: 20rem;
+  }
+  #centrarx2{
+    transform: translate(4.2rem, 110px);
+  }
+}
+
+/* informacion */
 .info {
   display: flex;
   align-items: center;
@@ -336,6 +410,15 @@ section article p {
   border-radius: 1rem;
   padding: 1rem;
   font-size: 1.3rem;
+}
+
+@media(max-width:1200px){
+  .info{
+    transform: translate(4.2rem, 5.5rem);
+  }
+  .info article p{
+    width: 500px;
+  }
 }
 
 footer{
@@ -363,4 +446,16 @@ footer nav a {
   text-decoration: none;
   color: white;
   font-size: 1rem;
+}
+
+#contact{
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+}
+
+@media(max-width:1200px){
+  #futer{
+    transform: translate(4.2rem, 150px);
+  }
 }
