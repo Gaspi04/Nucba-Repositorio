@@ -9,6 +9,7 @@
   box-sizing: border-box;
 }
 
+
 #carrito {
   width: 2rem;
   height: 2rem;
@@ -387,7 +388,7 @@ section h2 {
     max-width: 100%;
   }
   #acomodar li{
-    width: 20rem;
+    width: 30rem;
   }
   #centrarx2{
     transform: translate(4.2rem, 110px);
@@ -414,7 +415,7 @@ section article p {
 
 @media(max-width:1200px){
   .info{
-    transform: translate(4.2rem, 5.5rem);
+    transform: translate(4.5rem, 5.5rem);
   }
   .info article p{
     width: 500px;
