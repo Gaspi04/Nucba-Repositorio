@@ -14,8 +14,9 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  overflow-x: hidden; /* Evita que el body tenga scroll horizontal */
+  overflow-x: hidden;
 }
+
 
 /* navbar */
 
@@ -54,15 +55,35 @@ body {
   color: crimson;
 }
 
+#btn-menu {
+  margin-left: 0.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+#btn-menu img {
+  width: 1.3rem;
+  height: 3rem;
+  display: none;
+}
+
+@media(max-width: 1200px){
+  #btn-menu img{
+    display: flex;
+  }
+}
+
 /* main */
 
 #main {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start; /* Alineación corregida */
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding-left: 25px; /* En lugar de transform */
+  padding-left: 25px;
 }
 
 #info {
@@ -183,6 +204,28 @@ body {
 
 #list-1 a:hover {
   background-color: crimson;
+}
+
+/* section4 */
+
+#section4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#section4 h2 {
+  font-size: 2rem;
+}
+
+#section4 p {
+  background-color: blueviolet;
+  color: white;
+  width: 50rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
 }
 
 /* footer */
