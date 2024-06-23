@@ -69,9 +69,19 @@ body {
   display: none;
 }
 
-@media(max-width: 1200px){
+@media (max-width: 1200px) {
+  #main-header{
+    width: 100%;
+  }
+  #main-header a{
+    display: none;
+  }
   #btn-menu img{
     display: flex;
+  }
+  #main-header picture img{
+    width: 8rem;
+    height: 8rem;
   }
 }
 
@@ -134,6 +144,31 @@ body {
   max-width: 100%;
 }
 
+@media (max-width: 1200px){
+  #main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #info h1{
+    font-size: 1.8rem;
+  }
+  #info p{
+    font-size: 1rem;
+    width: 17rem;
+  }
+  #img-main{
+    display: none;
+  }
+}
+
 /* section2 */
 
 #section2 {
@@ -154,6 +189,21 @@ body {
   border-radius: 1rem;
   height: 2rem;
   width: 20rem;
+}
+
+@media (max-width: 1200px){
+  #section2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #section2 h2{
+    font-size: 1.5rem;
+  }
+  #section2 input{
+    width: 18rem;
+  }
 }
 
 /* section3 */
@@ -206,6 +256,21 @@ body {
   background-color: crimson;
 }
 
+@media (max-width: 1200px){
+  #section3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #list-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
 /* section4 */
 
 #section4 {
@@ -228,6 +293,18 @@ body {
   padding: 0.5rem;
 }
 
+@media (max-width: 1200px){
+  #section4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #section4 p{
+    width: 20rem;
+  }
+}
+
 /* footer */
 
 #last-section {
@@ -242,6 +319,7 @@ body {
 
 #last-section h3 {
   color: white;
+  font-size: 2rem;
 }
 
 #list-footer {
@@ -264,4 +342,15 @@ body {
 
 #list-footer li a:hover {
   background-color: blueviolet;
+}
+
+.sub-titulo-footer{
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1200px){
+  #last-section h3{
+    font-size: 2rem;
+  }
 }
