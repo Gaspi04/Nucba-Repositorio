@@ -3,36 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registrarse</title>
-    <link rel="stylesheet" href="register.css" />
+    <title>Seven</title>
+    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
     <header id="main-header">
-      <picture><img src="seven.png" alt="Logo" /></picture>
+      <picture><img src="imagenes/seven.png" alt="Logo" /></picture>
       <nav id="main-nav">
-        <a href="/Integrador de HTML y CSS/index.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="register.html">Registrarse</a>
         <a href="login.html">Iniciar</a>
       </nav>
     </header>
     <main class="login">
       <form action="">
-        <h1>Registrarse</h1>
-        <div class="input-box">
-          <input type="text" placeholder="Gmail" />
-        </div>
+        <h1>Iniciar</h1>
         <div class="input-box">
           <input type="text" placeholder="Usuario" />
         </div>
         <div class="input-box">
-          <input type="password" placeholder="contraseña" />
+          <input type="password" placeholder="Contraseña" />
         </div>
         <div class="remember">
-          <label> <input type="checkbox" />Recuerdame </label>
+          <ul>
+            <label>
+              <li><input type="checkbox" />Recuerdame</li>
+              <li><a href="#">Olvide mi contraseña</a></li>
+            </label>
+          </ul>
         </div>
         <button type="submit" class="btn">Iniciar</button>
         <div class="register">
-          <p>¿Ya tenes una cuenta?<a href="login.html">Inicia</a></p>
+          <p>¿No tenes una cuenta?<a href="register.html">Registrate</a></p>
         </div>
       </form>
     </main>
