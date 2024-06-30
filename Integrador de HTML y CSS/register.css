@@ -12,21 +12,31 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  overflow-x: hidden;
 }
 
 #main-header {
-  margin: 0;
-  padding: 0.7rem;
   background-color: rgb(158, 104, 158);
   display: flex;
   align-items: center;
   height: 4.4rem;
+  padding: 0.7rem;
   top: 0;
   left: 0;
   width: 100%;
   gap: 2rem;
   font-size: 1.5rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+#main-header form picture img {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(158, 104, 158);
+  border: 1px solid black;
 }
 
 #main-nav {
@@ -50,8 +60,70 @@ body {
   color: crimson;
 }
 
+#Btn-menu {
+  display: none;
+  order: 2;
+}
+
+#Btn-menu button {
+  display: none;
+  font-size: 2.2rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+#Btn-menu nav a {
+  font-size: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 1rem;
+  background-color: blueviolet;
+  padding: 1rem;
+  width: 5rem;
+  color: white;
+  transition: color 0.3s;
+}
+
+#Btn-menu nav a:hover {
+  background-color: rgb(158, 104, 158);
+}
+
+#Btn-menu nav {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobileMenuPopover {
+  transform: translateX(100%);
+  transition: transform 0.4s, overlay 0.4s ease-out;
+  display: block;
+  max-width: 400px;
+  width: 15rem;
+  inset: unset;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgb(95, 95, 95);
+}
+
+.mobileMenuPopover:popover-open {
+  transform: translateX(0);
+}
+
+.mobileMenuPopover::backdrop {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
 .login {
-  width: 420px;
+  width: 100%;
+  max-width: 420px;
   background-color: rgb(255, 63, 101);
   border-radius: 10px;
   padding: 30px 40px;
@@ -144,7 +216,7 @@ body {
 
 @media (max-width: 1200px) {
   .login {
-    width: 600px;
+    width: 80%;
   }
 
   .login h1 {
@@ -170,10 +242,53 @@ body {
   .register p {
     font-size: 20px;
   }
+
+  #main-header {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #main-header a {
+    display: none;
+  }
+
+  #main-header picture img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  #Btn-menu {
+    display: flex;
+    order: 2;
+  }
+
+  #Btn-menu button {
+    display: flex;
+  }
+
+  #Btn-menu nav a {
+    display: flex;
+  }
 }
 
 @media (max-width: 700px) {
   .login {
-    width: 440px;
+    width: 90%;
+  }
+
+  .login h1 {
+    font-size: 24px;
+  }
+
+  .input-box input {
+    font-size: 16px;
+  }
+
+  .login .btn {
+    font-size: 20px;
+  }
+
+  .register p {
+    font-size: 16px;
   }
 }

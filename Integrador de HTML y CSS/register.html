@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registrarse</title>
+    <title>Registrarse-Seven</title>
     <link rel="stylesheet" href="register.css" />
   </head>
   <body>
@@ -13,6 +13,19 @@
         <a href="index.html">Home</a>
         <a href="register.html">Registrarse</a>
         <a href="login.html">Iniciar</a>
+        <section id="Btn-menu">
+          <button popovertarget="mobile-menu">☰</button>
+          <div popover id="mobile-menu" class="mobileMenuPopover">
+            <button popovertarget="mobile-menu" popovertargetaction="hide">
+              ×
+            </button>
+            <nav>
+              <a href="index.html">Home</a>
+              <a href="register.html">Registrarse</a>
+              <a href="login.html">Iniciar</a>
+            </nav>
+          </div>
+        </section>
       </nav>
     </header>
     <main class="login">
@@ -25,7 +38,7 @@
           <input type="text" placeholder="Usuario" />
         </div>
         <div class="input-box">
-          <input type="password" placeholder="contraseña" />
+          <input type="password" placeholder="Contraseña" />
         </div>
         <div class="remember">
           <label> <input type="checkbox" />Recuerdame </label>
