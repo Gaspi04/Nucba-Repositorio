@@ -47,3 +47,48 @@ const pizzas = [
     ingredientes: ["Muzzarella", "Tomate", "Anana"],
   },
 ];
+
+function impares(pizzas) {
+  let pizzasImpares = pizzas.filter(function (pizza) {
+    return pizza.id % 2 !== 0;
+  });
+
+  let nombres = pizzasImpares.map(function (pizza) {
+    return pizza.nombre;
+  });
+
+  console.log("Pizzas con id impares:" + nombres);
+}
+
+var pizzas1 = impares(pizzas);
+
+function economicas(pizzas) {
+  let pizzasbaratas = pizzas.filter(function(pizza) {
+    return pizza.precio <= 600;
+  });
+  let nombres = pizzasbaratas.map(function(pizza) {
+    return pizza.nombre;
+  });
+  console.log("Pizzas mas baratas que 600: " +nombres);
+}
+
+var pizzas2 = economicas(pizzas);
+
+
+function precio(pizzas) {
+  let np = pizzas.map(function(pizza) {
+    return `${pizza.nombre}: $${pizza.precio}`;
+  });
+  console.log(np);
+}
+
+var pizzas3 = precio(pizzas);
+
+function ingredientes(pizzas) {
+  pizzas.forEach(function(pizza) {
+    console.log(`Ingredientes de la ${pizza.nombre}:`);
+    console.log(pizza.ingredientes.join(", "));
+  });
+}
+
+var pizzas4 = ingredientes(pizzas);
