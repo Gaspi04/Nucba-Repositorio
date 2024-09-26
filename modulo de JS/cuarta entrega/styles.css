@@ -1,0 +1,152 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Encabezado */
+header {
+  background-color: #1c1c1c;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  margin: 20px auto;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column; /* Cambiamos a columna para alinear la imagen, título y precio */
+  align-items: center; /* Alineamos los elementos al centro horizontalmente */
+  justify-content: center; /* Alineamos los elementos al centro verticalmente */
+  background-color: gray;
+  border-radius: 2rem;
+  padding: 2rem;
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%;
+  max-width: 500px; /* Aumentamos el tamaño máximo */
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Añadimos margen inferior para separarlo del texto */
+}
+
+.slide-info {
+  color: #fff;
+  text-align: center;
+}
+
+.slide-info h2 {
+  font-size: 32px; /* Aumentamos el tamaño */
+  margin: 0;
+}
+
+.slide-info p {
+  font-size: 28px;
+  margin: 10px 0;
+  color: #e63946;
+}
+
+/* Botones de Navegación */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
+}
+
+/* Productos */
+.products {
+  text-align: center;
+  padding: 20px;
+}
+
+.products h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Productos */
+.product-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 15px;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 220px; /* Aumentamos el tamaño máximo */
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 18px;
+  color: #e63946;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
