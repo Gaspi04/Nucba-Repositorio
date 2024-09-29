@@ -9,13 +9,32 @@
   </head>
   <body>
     <!-- Encabezado -->
-    <header>
-      <h1>Rincón Gamer</h1>
-      <p>
-        Todo lo que necesitas para vivir la mejor experiencia de videojuegos
-      </p>
+    <header id="main-header">
+      <div class="logo">
+        <p>🖥️</p>
+        <p>Neko Byte</p>
+      </div>
+      <nav id="main-nav">
+        <a href="">Home</a>
+        <a href="products">Productos</a>
+        <a href="">Registrarse</a>
+        <a href="">Iniciar</a>
+      </nav>
+      <section id="Btn-menu">
+        <button popovertarget="mobile-menu">☰</button>
+        <div popover id="mobile-menu" class="mobileMenuPopover">
+          <button popovertarget="mobile-menu" popovertargetaction="hide">
+            ×
+          </button>
+          <nav>
+            <a href="index.html">Home</a>
+            <a href="products">Productos</a>
+            <a href="#">Registrarse</a>
+            <a href="#">Iniciar</a>
+          </nav>
+        </div>
+      </section>
     </header>
-
     <!-- Slider de Juegos -->
     <section class="slider">
       <div class="slider-container" id="slider-container">
@@ -53,57 +72,15 @@
     </section>
 
     <!-- Sección de Productos -->
-    <section class="products">
-      <h2>Productos Destacados</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="assets/ps5 - spiderman.webp" alt="Consola" />
-          <h3>Consola de Videojuegos</h3>
-          <p>$500.00</p>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/silla gamer.jfif" alt="Silla Gamer" />
-          <h3>Silla Gamer</h3>
-          <p>$150.00</p>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/teclado.jfif" alt="Teclado Gamer" />
-          <h3>Teclado Mecánico RGB</h3>
-          <p>$80.00</p>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/auris.png" alt="Auriculares" />
-          <h3>Auriculares Gamer</h3>
-          <p>$120.00</p>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/monitor.webp" alt="Monitor" />
-          <h3>Monitor 144Hz</h3>
-          <p>$300.00</p>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/mausepad cachondo.jfif" alt="Mouse Gamer" />
-          <h3>Mousepad cachondo 100% disfrute</h3>
-          <p>$50.00</p>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/microfono.jfif" alt="Volante Gamer" />
-          <h3>Volante Gamer</h3>
-          <p>$200.00</p>
-        </div>
-
-        <div class="product-card">
-          <img src="assets/joystick arg.jfif" alt="Control Gamer" />
-          <h3>Control Inalámbrico</h3>
-          <p>$70.00</p>
-        </div>
-      </div>
+    <section id="products">
+      <h2>Productos</h2>
+      <ul id="categories">
+        <button id="juegos">juegos</button>
+        <button id="consolas">consolas</button>
+        <button id="accesorios">accesorios</button>
+      </ul>
+      <!-- el ul este es donde van los products -->
+      <ul id="list"></ul>
     </section>
   </body>
 </html>
