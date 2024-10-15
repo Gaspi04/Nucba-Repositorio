@@ -33,12 +33,11 @@ let autoSlider = setInterval(nextSlide, 3000);
 
 // Pausar el slider automático cuando el usuario interactúa
 sliderContainer.addEventListener("mouseenter", () => clearInterval(autoSlider));
-sliderContainer.addEventListener(
-  "mouseleave",
-  () => (autoSlider = setInterval(nextSlide, 3000))
-);
+sliderContainer.addEventListener("mouseleave", () => {
+  autoSlider = setInterval(nextSlide, 3000);
+});
 
-// selector
+// Selector genérico
 const select = (selector = "") => document.querySelector(selector);
 const selectAll = (selector = "") => document.querySelectorAll(selector);
 const toggle = (element = "", className = "") =>
@@ -52,7 +51,7 @@ const create = (tag = "", content = "", attributes = {}) => {
   return element;
 };
 
-// data
+// Data de productos
 const carta = [
   {
     id: 1,
@@ -161,7 +160,7 @@ const carta = [
   },
 ];
 
-// paja
+// Renderizar productos
 const content = document.getElementById("list");
 const juegos = document.getElementById("juegos");
 const consolas = document.getElementById("consolas");
@@ -185,6 +184,7 @@ const products = (filteredproducts) => {
 
 products(carta);
 
+// Filtro de productos
 const filtro = (category) => {
   const filteredproducts = carta.filter(
     (product) => product.category === category
@@ -192,8 +192,8 @@ const filtro = (category) => {
   products(filteredproducts);
 };
 
+// Gestionar el estado del filtro
 let lastCategory = null;
-
 const setupFilter = (button, category) => {
   button.addEventListener("click", () => {
     if (lastCategory === category) {
@@ -209,3 +209,24 @@ const setupFilter = (button, category) => {
 setupFilter(juegos, "juegos");
 setupFilter(consolas, "consolas");
 setupFilter(accesorios, "accesorios");
+
+// Menu desplegable
+const body = document.body;
+const _items = select("#_items");
+const _toggle = select("#_toggle");
+
+// Función para alternar el menú
+const toggleMenu = () => {
+  _items.classList.toggle("open");
+  _toggle.classList.toggle("close");
+};
+
+// Cerrar el menú al hacer scroll
+window.addEventListener("scroll", () => {
+  if (_items.classList.contains("open")) {
+    toggleMenu();
+  }
+});
+
+// Evento del toggle
+_toggle.addEventListener("click", toggleMenu);

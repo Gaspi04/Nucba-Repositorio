@@ -29,7 +29,7 @@ body {
 
 /* Encabezado */
 #main-header {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(44, 44, 44);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,6 +40,10 @@ body {
   width: 100%;
   gap: 2rem;
   font-size: 1.5rem;
+}
+
+.Neko {
+  display: flex;
 }
 
 #main-header p {
@@ -64,28 +68,18 @@ body {
   color: crimson;
 }
 
+@media (max-width: 1200px) {
+  .Neko {
+    display: none;
+  }
+  #main-nav a{
+    display: none;
+  }
+}
+
 /* Menú móvil */
 #Btn-menu {
   display: none;
-}
-
-/* Media Queries para Mobile */
-@media (max-width: 768px) {
-  #main-nav {
-    display: none; /* Esconde el menú principal en móvil */
-  }
-
-  #Btn-menu {
-    display: block; /* Muestra el botón del menú móvil */
-  }
-
-  .mobileMenuPopover {
-    width: 100%; /* El menú móvil ocupa toda la pantalla */
-  }
-
-  .slider img {
-    height: 200px; /* Ajusta la altura del slider en móvil */
-  }
 }
 
 /* Slider */
@@ -95,11 +89,13 @@ body {
   overflow: hidden;
   width: 100%;
   max-width: 1200px;
+  height: auto; /* Permitir que la altura se ajuste automáticamente */
 }
 
 .slider-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 
 .slide {
@@ -118,7 +114,7 @@ body {
 .slide img {
   width: 100%;
   max-width: 500px;
-  height: 300px;
+  height: auto; /* Asegurarse de que la imagen mantenga su relación de aspecto */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -203,17 +199,17 @@ body {
 
 .card-products img {
   width: 100%;
-  height: auto; 
-  max-height: 200px; 
-  object-fit: cover; 
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
   border-bottom: 1px solid #ddd;
-  border-radius: 5px 5px 0 0; 
+  border-radius: 5px 5px 0 0;
 }
 
 .card-products[data-id="3"] img {
   width: 100%;
-  height: 200px; 
-  object-fit: contain; 
+  height: 200px;
+  object-fit: contain;
   border-bottom: 1px solid #ddd;
 }
 
@@ -243,37 +239,133 @@ body {
   background-color: #d62828;
 }
 
-/* Responsive Cards */
+/* footer */
+#last-section {
+  background-color: rgb(255, 78, 113);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* Reducir el espacio entre elementos */
+  padding: 1rem; /* Añadir padding para un mejor espaciado */
+}
+
+#last-section h3 {
+  color: white;
+  font-size: 1.8rem; /* Reducir tamaño del texto */
+  margin: 0;
+  text-align: center; /* Centrar el texto */
+}
+
+#list-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; /* Organizar los elementos en fila */
+  gap: 1rem; /* Espacio entre los ítems */
+  list-style: none;
+  padding: 0; /* Reducir padding */
+  width: 100%;
+  text-align: center;
+}
+
+#list-footer li {
+  display: inline-block;
+}
+
+#list-footer li a {
+  color: white;
+  background-color: rgb(0, 0, 0);
+  border-radius: 2rem;
+  padding: 0.3rem 1rem;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+#list-footer li a:hover {
+  background-color: gray;
+}
+
+/* //////////// */
+
+.nav_toggle {
+  display: none;
+}
+
+#mobile-nav.active {
+  display: flex;
+  padding: 1rem;
+}
+
 @media (max-width: 768px) {
-  .card-products {
-    width: 100%;
-    margin: 0;
-  }
-
-  #list {
+  .nav_items {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: orange;
+    display: flex;
     flex-direction: column;
-    gap: 10px;
+    width: 100%;
+    height: -webkit-fill-available;
+    transform: translateX(-100%);
+    transition: 0.3s ease all;
+  }
+  .nav_items a {
+    font-size: 1.5rem;
+    padding: 15px 0;
+    margin: 10px 0;
+  }
+  .nav_items a {
+    text-align: center;
+  }
+  .nav_toggle {
+    display: flex !important;
+    flex-direction: column;
+    margin: 15px;
+  }
+  .nav_toggle span {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transform-origin: 5px 0px;
+    transition: all 0.2s linear;
+  }
+  .close span {
+    transform: rotate(45deg) translate(0px, 0px);
+  }
+  .close span:nth-child(2) {
+    display: none;
+  }
+  .close span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px, 1px);
+  }
+  .open {
+    transform: translateX(0) !important;
   }
 }
 
-@media (max-width: 1200px) {
-  .card-products {
-    width: calc(
-      50% - 40px
-    ); /* Hace que se muestren dos productos por fila en pantallas medianas */
-  }
+#btn-cart {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+  border: none;
+  outline: none;
 }
 
-@media (max-width: 600px) {
-  .card-products {
-    width: 100%; /* Un solo producto por fila en pantallas pequeñas */
-  }
-
-  #slider-container {
-    height: auto;
-  }
+#btn-cart svg {
+  fill: var(--white);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+#btn-cart:hover svg {
+  fill: var(--gray);
 }
 
-#last-section{
-  background-color:crimson ;
-}
+
