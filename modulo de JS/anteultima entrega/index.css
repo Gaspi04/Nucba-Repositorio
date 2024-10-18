@@ -1,0 +1,77 @@
+h1 {
+  text-align: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 0vh auto;
+  padding: 20px;
+  gap: 0;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #646363;
+  border-radius: 8px;
+  outline: none;
+}
+
+button {
+  background-color: black;
+  border: 1px solid #646363;
+  border-left: none;
+  border-radius: 15px 15px 15px 15px;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+button img {
+  height: 24px;
+  width: 24px;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+.card-products-container {
+  margin: 4vh auto;
+  text-align: center;
+}
+
+.card-products {
+  display: inline-block;
+  text-align: center;
+  margin: 0 30px;
+}
+
+.card-products img {
+  height: 500px;
+  width: 500px;
+}
+
+.card-products h3,
+.card-products .price {
+  margin-top: 10px;
+  font-size: 40px;
+}
+
+.card-products h5 {
+  font-size: 20px;
+}
+
+.card-products p {
+  font-size: 15px;
+}
+
+.no-results {
+  font-size: 20px;
+  color: red;
+  text-align: center;
+  display: none;
+}
