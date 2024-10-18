@@ -231,9 +231,6 @@ window.addEventListener("scroll", () => {
 // Evento del toggle
 _toggle.addEventListener("click", toggleMenu);
 
-// Evento del toggle
-_toggle.addEventListener("click", toggleMenu);
-
 // Cerrar el menú al hacer scroll
 window.addEventListener("scroll", () => {
   if (_items.classList.contains("open")) {
