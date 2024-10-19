@@ -48,10 +48,22 @@ body {
   display: flex;
 }
 
+/* Estilos para el navbar */
 #navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center; /* Centra los elementos en el navbar */
   gap: 1rem;
+  width: 100%;
+}
+
+.nav_items {
+  display: flex; /* Asegúrate de que los enlaces estén en fila */
+  justify-content: center; /* Centra los enlaces dentro del nav */
+  align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.nav_toggle {
+  margin-left: auto; /* Empuja el toggle hacia la derecha */
 }
 
 #navbar a {
@@ -425,3 +437,84 @@ body {
     transform: translateX(0) !important;
   }
 }
+
+/* Estilo del botón del carrito */
+.ver-carrito {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  padding: 0.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.ver-carrito:hover {
+  transform: scale(1.1);
+  color: crimson;
+}
+
+/* Estilos para el modal del carrito */
+#modal-container {
+  position: fixed; /* Asegura que el modal se mantenga en la misma posición */
+  top: 0; /* Posiciona el modal desde la parte superior */
+  right: 0; /* Posiciona el modal a la derecha */
+  width: 300px; /* Ancho del modal */
+  height: 100vh; /* Altura completa de la ventana */
+  background-color: rgb(77, 77, 77); /* Fondo blanco semitransparente */
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+  overflow-y: auto; /* Permite el desplazamiento vertical si es necesario */
+  padding: 20px; /* Espaciado interno */
+  transition: transform 0.3s ease; /* Transición suave */
+  transform: translateX(100%); /* Inicialmente oculto a la derecha */
+  z-index: 1000;
+}
+
+/* Muestra el modal */
+#modal-container.active {
+  transform: translateX(0); /* Muestra el modal */
+}
+
+/* Estilos del encabezado del modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between; /* Espacio entre título y botón de cerrar */
+  align-items: center; /* Centrar verticalmente */
+}
+
+/* Estilos del contenido del modal */
+.modal-content {
+  display: flex;
+  align-items: left; /* Alinea la imagen y el texto verticalmente */
+  margin-bottom: 10px; /* Espaciado entre productos */
+  flex-direction: column;
+}
+
+
+.modal-content img {
+  width: 80px; /* Ajusta el ancho según sea necesario */
+  height: auto; /* Mantiene la relación de aspecto */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+/* Estilos del total */
+.modal-total {
+  margin-top: 20px; /* Espacio arriba del total */
+  font-weight: bold; /* Texto en negrita */
+}
+
+.modal-item {
+  display: flex;
+  align-items: center; /* Alinear verticalmente */
+  margin-bottom: 10px; /* Espacio entre los productos */
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+}
+
+/* .product-price{
+  transform: translate(-130px, 70px);
+  font-size: 2px;
+} */
+
