@@ -24,7 +24,7 @@ button {
   background-color: black;
   border: 1px solid #646363;
   border-left: none;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 15px;
   padding: 10px;
   cursor: pointer;
   outline: none;
@@ -39,38 +39,45 @@ button:hover {
   background-color: #e0e0e0;
 }
 
-.card-products-container {
-  margin: 4vh auto;
+.pokeContainer {
+  margin: 2vh auto;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.card-products {
+.pokeCard {
   display: inline-block;
   text-align: center;
-  margin: 0 30px;
+  margin: 10px;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
-.card-products img {
-  height: 500px;
-  width: 500px;
+.pokeCard img {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
 }
 
-.card-products h3,
-.card-products .price {
+.pokeCard h3 {
   margin-top: 10px;
-  font-size: 40px;
+  font-size: 18px;
 }
 
-.card-products h5 {
-  font-size: 20px;
+.pokeCard h5 {
+  font-size: 14px;
 }
 
-.card-products p {
-  font-size: 15px;
+.pokeCard p {
+  font-size: 12px;
 }
 
 .no-results {
-  font-size: 20px;
+  font-size: 18px;
   color: red;
   text-align: center;
   display: none;
