@@ -140,8 +140,8 @@ const products = (filteredProducts) => {
       const productId = parseInt(e.target.closest(".card-products").dataset.id);
       const product = carta.find((prod) => prod.id === productId);
       if (product) {
-        carrito.push(product);
-        console.log(carrito);
+        addProductToCart(product);
+        console.log("Producto agregado al carrito:", product.name);
       }
     });
   });
@@ -150,8 +150,20 @@ const products = (filteredProducts) => {
 // Inicializar la lista de productos
 products(carta);
 
+// Función para agregar producto al carrito
+const addProductToCart = (product) => {
+  const existingProduct = carrito.find((item) => item.id === product.id);
+  if (existingProduct) {
+    existingProduct.cantidad += 1;
+  } else {
+    carrito.push({ ...product, cantidad: 1 });
+  }
+  updateCartModal();
+};
+
 // Función de filtro de productos
 const filtro = (category) => {
+  console.log("Filtro aplicado:", category); // Muestra en consola el filtro aplicado
   const filteredProducts = carta.filter(
     (product) => product.category === category
   );
@@ -176,8 +188,8 @@ setupFilter(juegos, "juegos");
 setupFilter(consolas, "consolas");
 setupFilter(accesorios, "accesorios");
 
-// Mostrar carrito en modal
-verCarrito.addEventListener("click", () => {
+// Función para actualizar y mostrar el carrito en el modal
+const updateCartModal = () => {
   modalcontainer.classList.add("active");
   modalcontainer.innerHTML = "";
 
@@ -194,87 +206,62 @@ verCarrito.addEventListener("click", () => {
   });
   modalHeader.append(closeModal);
 
+  // Mostrar productos con botones de cantidad
   carrito.forEach((product) => {
     let cartContent = document.createElement("div");
     cartContent.className = "modal-content";
     cartContent.innerHTML = `
-        <img src="${product.cardimg}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p class="product-price">Precio: $${product.precio}</p>
-      `;
+      <img src="${product.cardimg}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p class="product-price">Precio unitario: $${product.precio}</p>
+      <div class="quantity-controls">
+        <button class="decrease" data-id="${product.id}">-</button>
+        <span class="quantity">${product.cantidad}</span>
+        <button class="increase" data-id="${product.id}">+</button>
+      </div>
+      <p>Subtotal: $${(product.precio * product.cantidad).toFixed(2)}</p>
+    `;
     modalcontainer.append(cartContent);
   });
 
-  const total = carrito.reduce((sum, product) => sum + product.precio, 0);
+  // Total del carrito
+  const total = carrito.reduce(
+    (sum, product) => sum + product.precio * product.cantidad,
+    0
+  );
   const totalElement = document.createElement("div");
   totalElement.className = "modal-total";
-  totalElement.innerHTML = `<h3>Total: $${total}</h3>`;
+  totalElement.innerHTML = `<h3>Total: $${total.toFixed(2)}</h3>`;
   modalcontainer.append(totalElement);
-});
 
-/// Mostrar productos en el carrito
-carrito.forEach((product) => {
-  let cartContent = document.createElement("div");
-  cartContent.className = "modal-content";
-  cartContent.innerHTML = `
-        <img src="${product.cardimg}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p class="product-price">Precio: $${product.precio}</p> <!-- El precio debajo del nombre -->
-      `;
-  modalcontainer.append(cartContent);
-});
-// Mostrar total
-const total = carrito.reduce((sum, product) => sum + product.precio, 0);
-const totalElement = document.createElement("div");
-totalElement.className = "modal-total";
-totalElement.innerHTML = `<h3>Total: $${total}</h3>`;
-modalcontainer.append(totalElement);
-// Selecciona el modal
-const modalContainer = document.getElementById("modal-container");
+  // Eventos para aumentar/disminuir cantidad
+  document.querySelectorAll(".increase").forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = parseInt(button.dataset.id);
+      const product = carrito.find((item) => item.id === productId);
+      if (product) {
+        product.cantidad += 1;
+        console.log("Cantidad aumentada:", product.name);
+        updateCartModal();
+      }
+    });
+  });
 
-// Función para mostrar el modal
-document.getElementById("verCarrito").addEventListener("click", function () {
-  modalContainer.classList.add("active"); // Muestra el modal
-});
+  document.querySelectorAll(".decrease").forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = parseInt(button.dataset.id);
+      const product = carrito.find((item) => item.id === productId);
+      if (product && product.cantidad > 1) {
+        product.cantidad -= 1;
+        console.log("Cantidad disminuida:", product.name);
+      } else {
+        carrito = carrito.filter((item) => item.id !== productId);
+        console.log("Producto eliminado del carrito:", product.name);
+      }
+      updateCartModal();
+    });
+  });
+};
 
-// Función para ocultar el modal cuando se hace scroll
-function hideModalOnScroll() {
-  if (modalContainer.classList.contains("active")) {
-    modalContainer.classList.remove("active");
-  }
-}
-
-// Escucha el evento de scroll
-window.addEventListener("scroll", hideModalOnScroll);
-
-// Cerrar el modal al hacer clic fuera de él
-modalContainer.addEventListener("click", function (event) {
-  if (event.target === modalContainer) {
-    modalContainer.classList.remove("active"); // Oculta el modal
-  }
-});
-
-function addToCart(product) {
-  const modalContent = document.getElementById("modal-content");
-
-  // Crear un nuevo elemento para el producto
-  const productItem = document.createElement("div");
-  productItem.classList.add("modal-item");
-
-  // Agregar el nombre y el precio del producto en formato adecuado
-  productItem.innerHTML = `
-      <div class="product-info">
-        <img src="${product.image}" alt="${product.name}">
-        <div class="product-details">
-          <h3>${product.name}</h3>
-          <p class="product-price">Precio: $${product.price.toFixed(2)}</p>
-        </div>
-      </div>
-    `;
-
-  // Agregar el nuevo elemento al contenido del modal
-  modalContent.appendChild(productItem);
-
-  // Actualizar el total
-  updateTotal(product.price);
-}
+// Mostrar el carrito al hacer clic en "verCarrito"
+verCarrito.addEventListener("click", updateCartModal);
