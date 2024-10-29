@@ -117,40 +117,22 @@ form.error input.input {
   color: green;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 700px) {
   .contact {
-    width: 600px;
-    height: 450px;
+    width: 90%; /* Asegura que el contenedor ocupe el 90% en pantallas pequeñas */
+    padding: 15px; /* Ajustar el padding */
   }
 
   .contact h1 {
-    font-size: 60px;
+    font-size: 1.8rem; /* Ajustar el tamaño del encabezado */
   }
 
-  .input-box input {
-    font-size: 28px;
-  }
-
-  .contact .btn {
-    font-size: 30px;
-  }
   .redes a {
-    font-size: 2rem;
+    font-size: 1.2rem; /* Aumentar el tamaño de los enlaces */
   }
-  .contact p {
-    font-size: 1.8rem;
-  }
-}
 
-@media (max-width: 700px) {
-  .contact {
-    width: 420px;
-  }
-  .redes a {
-    font-size: 1.8rem;
-  }
   .contact p {
-    font-size: 1.5rem;
+    font-size: 1rem; /* Ajustar el tamaño del párrafo */
   }
 }
 
@@ -169,6 +151,6 @@ footer {
   color: white;
 }
 
-.logo:hover{
+.logo:hover {
   color: crimson;
 }
