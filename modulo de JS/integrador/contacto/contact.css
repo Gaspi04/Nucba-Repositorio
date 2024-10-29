@@ -163,6 +163,12 @@ footer {
   background-color: transparent;
 }
 
-.logo{
-    font-size: 3rem;
+.logo {
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+}
+
+.logo:hover{
+  color: crimson;
 }
