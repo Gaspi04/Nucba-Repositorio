@@ -6,14 +6,39 @@ export const Contenedor = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 70vh; /* Ajusta la altura fija */
   background-color: #f4f4f4;
   font-family: Arial, sans-serif;
   padding: 20px;
-  border: 1px solid #ddd; /* Borde alrededor de todo */
-  border-radius: 10px; /* Bordes redondeados */
+  border: 1px solid #ddd;
+  border-radius: 10px;
   max-width: 500px;
-  margin: auto;
+  margin: 50px auto; /* Agrega margen superior dinámico */
+
+  /* Líneas decorativas */
+  &:before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 80%;
+    background-color: #ddd;
+    margin-bottom: 20px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 80%;
+    background-color: #ddd;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    height: 50vh; /* Ajusta la altura en dispositivos más pequeños */
+    padding: 15px; /* Reduce el padding */
+    margin: 100px auto; /* Mueve el contenedor hacia abajo */
+  }
 `;
 
 // Título principal
@@ -29,16 +54,15 @@ export const Header = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 400px;
+  max-width: 400px; /* Ancho uniforme */
+  gap: 10px; /* Espaciado entre el input y el botón */
 `;
 
 // Input de tarea
 export const Input = styled.input`
-  width: 100%;
-  padding: 12px 20px; /* Igual que los botones */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  padding: 12px 20px;
   font-size: 16px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  max-width: 400px;
 `;

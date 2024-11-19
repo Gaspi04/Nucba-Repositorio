@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const List = styled.ol`
   list-style-type: none;
   padding: 0;
-  width: 100%;
+  width: 100%; /* Ocupa todo el ancho */
   max-width: 400px;
   margin-top: 20px;
 `;
@@ -16,19 +16,18 @@ export const Tarea = styled.li`
   align-items: center;
   background-color: #fff;
   padding: 10px;
-  margin-bottom: 10px;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 100%; /* Ocupa todo el ancho */
   max-width: 400px;
-  margin: 0 auto; /* Centrado */
-  border: none; /* Sin borde */
 `;
 
 // Span con el nombre de la tarea
 export const Span = styled.span`
   font-size: 16px;
   color: #333;
-  width: 100%;
-  max-width: 350px;
+  width: 100%; /* Asegura consistencia */
+  overflow: hidden; /* Para evitar desbordamiento */
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Recorta si es muy largo */
 `;
