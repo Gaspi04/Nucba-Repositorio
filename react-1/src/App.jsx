@@ -1,31 +1,21 @@
 import React from "react";
-import { Add, Delete, Deleteall } from "./components/button.style";
-import { List, Tarea, Span } from "./components/list.style";
-import { Contenedor, Title, Header, Input } from "./components/cont.style";
+import { TaskProvider } from "./context/TaskContext";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
+import DeleteAllButton from "./components/DeleteAllButton";
+import Contenedor from "./components/styles/Contenedor.style";
 
-function App() {
+const App = () => {
   return (
-    <>
+    <TaskProvider>
       <Contenedor>
-        <Title>Nucbatask</Title>
-        <Header>
-          <Input type="text" placeholder="¿Que tarea desea agregar?" />
-          <Add>Añadir</Add>
-        </Header>
-        <List>
-          <Tarea>
-            <Span>Tarea1</Span>
-            <Delete>Borrar</Delete>
-          </Tarea>
-          <Tarea>
-            <Span>Tarea2</Span>
-            <Delete>Borrar</Delete>
-          </Tarea>
-        </List>
-        <Deleteall>Borrar todo</Deleteall>
+        <h1>Nucbatask</h1>
+        <TaskForm />
+        <TaskList />
+        <DeleteAllButton />
       </Contenedor>
-    </>
+    </TaskProvider>
   );
-}
+};
 
 export default App;
