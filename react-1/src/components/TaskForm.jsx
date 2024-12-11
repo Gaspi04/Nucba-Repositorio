@@ -15,8 +15,8 @@ const TaskForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (task.length > 28) {
-      setError("La tarea no puede superar los 28 caracteres.");
+    if (task.length > 20) {
+      setError("La tarea no puede superar los 20 caracteres.");
       return;
     }
     addTask(task);
@@ -30,7 +30,7 @@ const TaskForm = () => {
       setTask(value); // Solo actualizamos el estado si está dentro del límite
       setError(""); // Limpiamos cualquier error previo
     } else {
-      setError("La tarea no puede superar los 28 caracteres.");
+      setError("La tarea no puede superar los 20 caracteres.");
     }
   };
 
